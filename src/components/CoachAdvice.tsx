@@ -124,7 +124,7 @@ Nós da Buzzini estamos juntos com você nessa!
             </div>
 
             <div className="space-y-3">
-              {coachOrientation.keyDates21k.map((item, idx) => (
+              {coachOrientation.keyDates21k.map((item: { date: string; label: string; icon: string; critical: boolean }, idx: number) => (
                 <div
                   key={idx}
                   className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 transition-colors ${

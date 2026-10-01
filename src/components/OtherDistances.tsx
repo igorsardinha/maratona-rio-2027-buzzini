@@ -27,7 +27,7 @@ export const OtherDistances: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {MARATHON_DATA.additionalDistances.map((item) => (
+          {MARATHON_DATA.additionalDistances.map((item: { distance: string; price: number; description: string; rule: string }) => (
             <div
               key={item.distance}
               className="p-6 rounded-2xl bg-neutral-950/80 border border-neutral-800 hover:border-[#ee5e2d]/40 transition-all flex flex-col justify-between"
