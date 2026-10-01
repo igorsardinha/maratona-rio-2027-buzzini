@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0c0d12;
+    color: #f3f4f6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f1016;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b2e3b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ee5e2d;
+}
+
+/* Infographic glow effects */
+.glow-orange {
+  box-shadow: 0 0 50px -10px rgba(238, 94, 45, 0.35);
+}
+
+.glow-orange-sm {
+  box-shadow: 0 0 20px -5px rgba(238, 94, 45, 0.4);
+}
+
+.timeline-connector {
+  background: linear-gradient(180deg, #ee5e2d 0%, #ff8c42 50%, rgba(238, 94, 45, 0.2) 100%);
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 8s ease-in-out infinite;
+}
