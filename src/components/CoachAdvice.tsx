@@ -21,7 +21,7 @@ const CHECKLIST_ITEMS = [
   'Conferir a Classificação Oficial (em 27/11)',
   'Identificar a data exata da minha Onda de Compra',
   'Configurar alarme no celular para o dia da onda',
-  'Garantir limite no cartão/Pix para efetuar os R$359 da inscrição',
+  'Garantir limite no cartão/Pix para efetuar os R$349 da inscrição',
 ];
 
 export const CoachAdvice: React.FC = () => {
@@ -69,9 +69,9 @@ Para quem vai correr os *21 KM (Meia Maratona)*, marque as datas críticas no ca
 📅 *18/11* - Encerramento impreterível do cadastro
 🎟️ *25/11* - Divulgação do número da sorte de cada atleta
 ✅ *27/11* - Divulgação da classificação dos sorteados
-🏁 *30/11 a 01/12* - Início da 1ª onda de compra da vaga (R$ 359 c/ camiseta)
+🏁 *30/11 a 01/12* - Início da 1ª onda de compra da vaga (R$ 349 c/ camiseta)
 
-⚠️ *LEMBRE-SE:* Ser sorteado NÃO garante vaga automática! Você precisa entrar na plataforma dentro da sua onda para comprar e pagar.
+⚠️ *LEMBRE-SE:* Ser sorteado NÃO garante vaga automática! Você precisa entrar na plataforma dentro da sua onda de 48h para comprar e pagar.
 
 Nós da Buzzini estamos juntos com você nessa! 
 *RIO 2027 JÁ COMEÇOU! 🧡*`;
@@ -90,61 +90,61 @@ Nós da Buzzini estamos juntos com você nessa!
   const progressPercentage = Math.round((checkedItems.length / CHECKLIST_ITEMS.length) * 100);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="rounded-3xl bg-neutral-900 border-2 border-[#ee5e2d]/40 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="rounded-2xl sm:rounded-3xl bg-neutral-900 border-2 border-[#ee5e2d]/40 p-4 sm:p-8 lg:p-12 shadow-2xl relative overflow-hidden">
         {/* Background highlight */}
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ee5e2d]/10 blur-[130px] pointer-events-none" />
 
         {/* Section title */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ee5e2d]/15 text-[#ee5e2d] border border-[#ee5e2d]/30 text-xs font-bold uppercase mb-3">
-            <Flame className="w-4 h-4" />
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ee5e2d]/15 text-[#ee5e2d] border border-[#ee5e2d]/30 text-[11px] sm:text-xs font-bold uppercase mb-3">
+            <Flame className="w-3.5 h-3.5" />
             <span>Buzzini Running Team</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight">
             {coachOrientation.title}
           </h2>
-          <p className="text-base sm:text-lg text-neutral-300 mt-2 font-medium">
+          <p className="text-xs sm:text-lg text-neutral-300 mt-2 font-medium">
             {coachOrientation.subtitle}
           </p>
         </div>
 
         {/* 2-Column layout: Key Dates on left, Checklist on right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 sm:gap-8 items-start">
           {/* Left Column: Key Dates Card */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
-              <h3 className="text-xl font-black text-white uppercase flex items-center gap-2">
-                <BellRing className="w-5 h-5 text-[#ee5e2d]" />
+          <div className="w-full p-4 sm:p-6 lg:p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800 space-y-4 sm:space-y-6">
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-neutral-800">
+              <h3 className="text-base sm:text-xl font-black text-white uppercase flex items-center gap-2">
+                <BellRing className="w-4 h-4 sm:w-5 sm:h-5 text-[#ee5e2d]" />
                 <span>Datas Críticas para os 21 KM</span>
               </h3>
-              <span className="text-[11px] font-bold uppercase px-2.5 py-1 rounded bg-[#ee5e2d]/20 text-[#ee5e2d]">
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase px-2 py-0.5 rounded bg-[#ee5e2d]/20 text-[#ee5e2d]">
                 Obrigatórias
               </span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5 sm:space-y-3">
               {coachOrientation.keyDates21k.map((item: { date: string; label: string; icon: string; critical: boolean }, idx: number) => (
                 <div
                   key={idx}
-                  className={`p-3.5 rounded-xl border flex items-center justify-between gap-3 transition-colors ${
+                  className={`p-3 sm:p-3.5 rounded-xl border flex items-center justify-between gap-2.5 transition-colors ${
                     item.critical
                       ? 'bg-neutral-900 border-[#ee5e2d]/40 hover:border-[#ee5e2d]'
                       : 'bg-neutral-900/60 border-neutral-800'
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-neutral-950 flex items-center justify-center font-mono font-black text-white text-sm border border-neutral-800">
+                  <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-neutral-950 flex items-center justify-center font-mono font-black text-white text-xs sm:text-sm border border-neutral-800 flex-shrink-0">
                       {item.date.split('/')[0]}/{item.date.split('/')[1]}
                     </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">{item.label}</div>
-                      <div className="text-[11px] text-neutral-400">Data oficial do processo</div>
+                    <div className="min-w-0">
+                      <div className="text-xs sm:text-sm font-bold text-white truncate">{item.label}</div>
+                      <div className="text-[10px] sm:text-[11px] text-neutral-400">Data oficial do processo</div>
                     </div>
                   </div>
 
                   {item.critical && (
-                    <span className="text-[10px] font-black uppercase text-[#ee5e2d] bg-[#ee5e2d]/10 px-2 py-0.5 rounded border border-[#ee5e2d]/30 flex-shrink-0">
+                    <span className="text-[9px] sm:text-[10px] font-black uppercase text-[#ee5e2d] bg-[#ee5e2d]/10 px-2 py-0.5 rounded border border-[#ee5e2d]/30 flex-shrink-0">
                       Crítica
                     </span>
                   )}
@@ -153,21 +153,21 @@ Nós da Buzzini estamos juntos com você nessa!
             </div>
 
             {/* Coaches Advice points */}
-            <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800/80 space-y-2 text-xs text-neutral-300">
-              <div className="font-bold text-white uppercase text-[11px] flex items-center gap-1.5 text-[#ee5e2d]">
+            <div className="p-3.5 sm:p-4 rounded-xl bg-neutral-900/50 border border-neutral-800/80 space-y-1.5 text-xs text-neutral-300">
+              <div className="font-bold text-white uppercase text-[10px] sm:text-[11px] flex items-center gap-1.5 text-[#ee5e2d]">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Mensagem da Assessoria:</span>
               </div>
-              <p>
-                "Nós vamos acompanhar todas essas etapas e avisar vocês pelo grupo do WhatsApp, mas é fundamental que cada atleta fique atento aos prazos. Principalmente porque, depois de sorteado, existe um período específico para realizar a compra!"
+              <p className="leading-relaxed">
+                "Nós vamos acompanhar todas essas etapas e avisar vocês pelo grupo do WhatsApp, mas cada atleta precisa ficar atento aos prazos das ondas de 48 horas!"
               </p>
             </div>
 
             {/* Action buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div className="flex flex-col sm:grid sm:grid-cols-2 gap-2.5 sm:gap-3 pt-2">
               <button
                 onClick={handleCopySummary}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-neutral-700 active:scale-95"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs uppercase tracking-wider transition-all border border-neutral-700 active:scale-95"
               >
                 {copied ? (
                   <>
@@ -184,7 +184,7 @@ Nós da Buzzini estamos juntos com você nessa!
 
               <button
                 onClick={downloadMarathonCalendar}
-                className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#ee5e2d] hover:bg-[#d94f20] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#ee5e2d]/30 active:scale-95"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#ee5e2d] hover:bg-[#d94f20] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-[#ee5e2d]/30 active:scale-95"
               >
                 <CalendarCheck className="w-4 h-4" />
                 <span>Salvar Datas (.ICS)</span>
@@ -193,21 +193,21 @@ Nós da Buzzini estamos juntos com você nessa!
           </div>
 
           {/* Right Column: Interactive Checklist */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800 space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-neutral-800">
+          <div className="w-full p-4 sm:p-6 lg:p-8 rounded-2xl bg-neutral-950/80 border border-neutral-800 space-y-4 sm:space-y-6">
+            <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-neutral-800">
               <div>
-                <h3 className="text-xl font-black text-white uppercase flex items-center gap-2">
-                  <CheckSquare className="w-5 h-5 text-emerald-400" />
+                <h3 className="text-base sm:text-xl font-black text-white uppercase flex items-center gap-2">
+                  <CheckSquare className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                   <span>Checklist do Corredor</span>
                 </h3>
-                <p className="text-xs text-neutral-400 mt-0.5">
+                <p className="text-[11px] sm:text-xs text-neutral-400 mt-0.5">
                   Marque cada passo conforme for concluindo
                 </p>
               </div>
 
               <div className="text-right">
-                <span className="text-xs font-bold text-neutral-400 uppercase">Progresso</span>
-                <div className="text-lg font-black text-emerald-400">{progressPercentage}%</div>
+                <span className="text-[10px] sm:text-xs font-bold text-neutral-400 uppercase">Progresso</span>
+                <div className="text-base sm:text-lg font-black text-emerald-400">{progressPercentage}%</div>
               </div>
             </div>
 
@@ -220,14 +220,14 @@ Nós da Buzzini estamos juntos com você nessa!
             </div>
 
             {/* Items */}
-            <div className="space-y-2.5">
+            <div className="space-y-2 sm:space-y-2.5">
               {CHECKLIST_ITEMS.map((task, idx) => {
                 const isChecked = checkedItems.includes(idx);
                 return (
                   <button
                     key={idx}
                     onClick={() => toggleCheck(idx)}
-                    className={`w-full p-3.5 rounded-xl border text-left flex items-start gap-3 transition-all ${
+                    className={`w-full p-3 sm:p-3.5 rounded-xl border text-left flex items-start gap-2.5 sm:gap-3 transition-all ${
                       isChecked
                         ? 'bg-emerald-950/20 border-emerald-500/40 text-neutral-200'
                         : 'bg-neutral-900/60 border-neutral-800/80 hover:border-neutral-700 text-neutral-300'
@@ -235,9 +235,9 @@ Nós da Buzzini estamos juntos com você nessa!
                   >
                     <span className="mt-0.5 flex-shrink-0 text-[#ee5e2d]">
                       {isChecked ? (
-                        <CheckSquare className="w-5 h-5 text-emerald-400" />
+                        <CheckSquare className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                       ) : (
-                        <Square className="w-5 h-5 text-neutral-600" />
+                        <Square className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-600" />
                       )}
                     </span>
                     <span className={`text-xs sm:text-sm font-medium ${isChecked ? 'line-through text-neutral-400' : ''}`}>
@@ -249,23 +249,23 @@ Nós da Buzzini estamos juntos com você nessa!
             </div>
 
             {/* Community message */}
-            <div className="p-4 rounded-xl bg-gradient-to-r from-neutral-900 to-neutral-900/60 border border-neutral-800 flex items-center gap-3">
-              <MessageCircle className="w-6 h-6 text-[#ee5e2d] flex-shrink-0" />
+            <div className="p-3.5 sm:p-4 rounded-xl bg-gradient-to-r from-neutral-900 to-neutral-900/60 border border-neutral-800 flex items-center gap-3">
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#ee5e2d] flex-shrink-0" />
               <div className="text-xs text-neutral-300">
                 <strong className="text-white block mb-0.5">Dúvida sobre sua inscrição?</strong>
-                Fale diretamente com os treinadores da Buzzini no grupo oficial de treinos!
+                Fale diretamente com os treinadores no grupo da Buzzini!
               </div>
             </div>
           </div>
         </div>
 
         {/* Big Energy Banner at the bottom */}
-        <div className="mt-12 text-center pt-8 border-t border-neutral-800">
-          <p className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-wide uppercase">
+        <div className="mt-8 sm:mt-12 text-center pt-6 sm:pt-8 border-t border-neutral-800">
+          <p className="text-xl sm:text-3xl lg:text-4xl font-black text-white tracking-wide uppercase">
             RIO 2027 JÁ COMEÇOU! <span className="text-[#ee5e2d]">🧡</span>
           </p>
-          <p className="text-sm text-neutral-400 mt-2">
-            Assessoria Esportiva Buzzini • Vamos juntos rumo à linha de chegada no Aterro do Flamengo!
+          <p className="text-xs sm:text-sm text-neutral-400 mt-2">
+            Assessoria Esportiva Buzzini • Vamos juntos rumo ao Aterro do Flamengo!
           </p>
         </div>
       </div>
